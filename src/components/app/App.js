@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Header from '../header/Header.js';
 import { ROUTES } from '../../routes/routes';
 import 'normalize.css';
@@ -53,6 +53,7 @@ export default function App() {
             <Route exact component={ROUTES.HOME.Component} path={ROUTES.HOME.path} />
             <Route exact component={ROUTES.USER_CONTAINER.Component} path={ROUTES.USER_CONTAINER.path} />
             <Route exact component={ROUTES.POST_CONTAINER.Component} path={ROUTES.POST_CONTAINER.path} />
+            <Redirect to="/"/>
           </Switch>
         </HomePage>
       </>
