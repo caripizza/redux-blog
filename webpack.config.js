@@ -1,5 +1,6 @@
 const HtmlPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // eslint-disable-next-line
 module.exports = {
@@ -14,6 +15,9 @@ module.exports = {
   },
   plugins: [
     new HtmlPlugin({ template: './src/index.html' }),
+    new CopyWebpackPlugin([{
+      from: 'public'
+    }]),
     new CleanPlugin('./dist')
   ],
   module: {
